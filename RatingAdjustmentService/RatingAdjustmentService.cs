@@ -43,7 +43,12 @@ namespace RatingAdjustment.Services
          */
         public double Adjust(double stars, double number_of_ratings) {
             // TODO: Implement this!
-            return 0.0;
+            SetPercentPositive(stars);
+            SetQ(number_of_ratings);
+            y = _percent_positive+(z*z)/(2*number_of_ratings)-_q;
+            Z= 1+(z*z)/number_of_ratings;
+            double lb = y/Z;
+            return lb*5;
         }
     }
 }
