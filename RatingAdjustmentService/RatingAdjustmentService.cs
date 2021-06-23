@@ -22,6 +22,7 @@ namespace RatingAdjustment.Services
         void SetPercentPositive(double stars)
         {
             // TODO: Implement this!
+            _percent_positive=stars/MAX_STARS;
            
         }
 
@@ -31,8 +32,8 @@ namespace RatingAdjustment.Services
         void SetQ(double number_of_ratings)
         {
          // TODO: Implement this!
-          double x = (_percent_positive -_percent_positive*_percent_positive + (z*z)/4*number_of_ratings)/number_of_ratings;
-            _q = z*Math.Sqrtx;
+          double x = (_percent_positive -_percent_positive*_percent_positive + (Z*Z)/4*number_of_ratings)/number_of_ratings;
+            _q = Z*Math.Sqrt(x);
         }
 
         /** Adjusted lower bound
@@ -45,9 +46,9 @@ namespace RatingAdjustment.Services
             // TODO: Implement this!
             SetPercentPositive(stars);
             SetQ(number_of_ratings);
-            y = _percent_positive+(z*z)/(2*number_of_ratings)-_q;
-            Z= 1+(z*z)/number_of_ratings;
-            double lb = y/Z;
+            y = _percent_positive+(Z*Z)/(2*number_of_ratings)-_q;
+            b= 1+(Z*Z)/number_of_ratings;
+            double lb = y/b;
             return lb*5;
         }
     }
