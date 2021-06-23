@@ -31,7 +31,7 @@ namespace RatingAdjustment.Services
         void SetQ(double number_of_ratings)
         {
          // TODO: Implement this!
-          double x = [_percent_positive -_percent_positive*_percent_positive + (z*z)/4*number_of_ratings]/number_of_ratings;
+          double x = (_percent_positive -_percent_positive*_percent_positive + (z*z)/4*number_of_ratings)/number_of_ratings;
             _q = z*Math.Sqrtx;
         }
 
