@@ -46,7 +46,7 @@ namespace RatingAdjustment.Services
             // TODO: Implement this!
             SetPercentPositive(stars);
             SetQ(number_of_ratings);
-            double lb = _percent_positive+(Z*Z)/(2*number_of_ratings)-_q/1+(Z*Z)/number_of_ratings;
+            double lb = _percent_positive+ ((Z*Z)/(2*number_of_ratings)-_q)/(1+(Z*Z)/number_of_ratings);
             return lb*5;
         }
     }
